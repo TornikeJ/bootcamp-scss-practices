@@ -12,8 +12,11 @@ body {
 }
 
 .wrap{
-    width:570px;
-
+    width:1170px;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3,1fr);
+    grid-gap:30px;
 }
 
 
@@ -23,8 +26,19 @@ $color3:#F9B718;
 $color4:#2C3E50;
 $color5:#A1B1BC;
 $color6:#CFD2D3;
-$color7:#A47503;
-
+$color7:#97E411;
+$color8:#7BC200;
+$color9:#FD7761;
+$color10:#F55C43;
+$color11:#6FD9FC;
+$color12:#47B4F6;
+$color13:#A39CDC;
+$color14:#8781BD;
+$color15:#A47503;
+$color16:#558502;
+$color17:#D52E13;
+$color18:#0787D4;
+$color19:#5B568E;
 
 
 .notification{
@@ -42,11 +56,11 @@ $color7:#A47503;
         display:flex;
         flex-shrink: 0;
         font-family: 'FontAwesome';
-        color:$color7;
         justify-content: center;
         align-items: center;
         font-size: 24px;
         line-height: 26px;
+        color:$color15;
         width:50px;
         height:50px;
         background-color: $color2;
@@ -56,6 +70,43 @@ $color7:#A47503;
         margin-right: 29px;
         margin-top: 42px;
     }
+
+    &.positive{
+        &::before{
+            content:'\f00c';
+            color:$color16;
+            background-color: $color7;
+            border:7px solid $color8;
+        }
+    }
+    &.negative{
+        &::before{
+            content:'\f00d';
+            color:$color17;
+            background-color: $color9;
+            border:7px solid $color10;
+        }
+    }
+    &.flash{
+        &::before{
+            content:'\f0e7';
+            color:$color18;
+            background-color: $color11;
+            border:7px solid $color12;
+        }
+    }
+    &.info{
+        grid-column: span 2;
+        padding-right: 35px;
+        
+        &::before{
+            content:'\f129';
+            color:$color19;
+            background-color: $color13;
+            border:7px solid $color14;
+        }
+    }
+
 
     div{
         margin-top: 34px;
