@@ -1,24 +1,22 @@
-
 * {
-    padding: 0;
-    margin: 0;
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
+    padding: 50px;   
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    padding:50px;
 }
 
-.wrap{
-    width:1170px;
-    display:grid;
+.wrap {
+    display: grid;
+    grid-gap: 30px;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3,1fr);
-    grid-gap:30px;
+    grid-template-rows: repeat(3, 1fr);
+    width: 1170px;
 }
-
 
 $color1:#707070;
 $color2:#FFC12D;
@@ -40,35 +38,34 @@ $color17:#D52E13;
 $color18:#0787D4;
 $color19:#5B568E;
 
-
-.notification{
-    border:1px solid transparent;
-    border-radius:10px;
-    padding-left:49px;
+.notification {
+    display: flex;
+    position: relative;
     padding-right: 70px;
     padding-bottom: 34px;
-    display:flex;
-    position: relative;
+    padding-left: 49px;
+    border: 1px solid transparent;
+    border-radius: 10px;
 
-    &.solid{
+    &.solid {
         background: $color2;
     }
 
-    &::before{
-        content:'\f12a';
-        display:flex;
+    &::before {
+        content: '\f12a';
+        display: flex;
         flex-shrink: 0;
-        font-family: 'FontAwesome';
-        justify-content: center;
         align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        border: 7px solid $color3;
+        border-radius: 50%;
+        background-color: $color2;
+        color: $color15;
+        font-family: 'FontAwesome';
         font-size: 24px;
         line-height: 26px;
-        color:$color15;
-        width:50px;
-        height:50px;
-        background-color: $color2;
-        border:7px solid $color3;
-        border-radius:50%;
         align-content: center;
         margin-right: 29px;
         margin-top: 42px;
