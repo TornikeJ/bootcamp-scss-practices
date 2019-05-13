@@ -20,19 +20,19 @@ body {
 }
 
 
-$color1:#E2E6E7;;
+$color1:#707070;
 $color2:#FFC12D;
-$color3:#F9B718;
+$color3:#C89210;
 $color4:#2C3E50;
-$color5:#A1B1BC;
+$color5:#B18009;
 $color6:#CFD2D3;
-$color7:#97E411;
+$color7:#A7EC2F;
 $color8:#7BC200;
-$color9:#FD7761;
+$color9:#FEB1A4;
 $color10:#F55C43;
-$color11:#6FD9FC;
+$color11:#85EBFA;
 $color12:#47B4F6;
-$color13:#A39CDC;
+$color13:#AACDF6;
 $color14:#8781BD;
 $color15:#A47503;
 $color16:#558502;
@@ -42,7 +42,7 @@ $color19:#5B568E;
 
 
 .notification{
-    border:1px solid $color1;
+    border:1px solid transparent;
     border-radius:10px;
     padding-left:49px;
     padding-right: 70px;
@@ -50,6 +50,9 @@ $color19:#5B568E;
     display:flex;
     position: relative;
 
+    &.solid{
+        background: $color2;
+    }
 
     &::before{
         content:'\f12a';
@@ -72,38 +75,71 @@ $color19:#5B568E;
     }
 
     &.positive{
+        &.solid{
+            background-color: $color7;
+        }
         &::before{
             content:'\f00c';
             color:$color16;
             background-color: $color7;
             border:7px solid $color8;
         }
+        a{
+            &::before{
+                color:$color16;
+            }
+        }
     }
     &.negative{
+        &.solid{
+            background-color: $color9;
+        }
         &::before{
             content:'\f00d';
             color:$color17;
             background-color: $color9;
             border:7px solid $color10;
         }
+        a{
+            &::before{
+                color:$color17;
+            }
+        }
     }
     &.flash{
+        &.solid{
+            background-color: $color11;
+        }
+
         &::before{
             content:'\f0e7';
             color:$color18;
             background-color: $color11;
             border:7px solid $color12;
         }
+        a{
+            &::before{
+                color:$color18;
+            }
+        }
     }
     &.info{
         grid-column: span 2;
-        padding-right: 35px;
         
+        &.solid{
+            background-color: $color13;
+        }
+
         &::before{
             content:'\f129';
             color:$color19;
             background-color: $color13;
             border:7px solid $color14;
+        }
+        a{
+            &::before{
+                color:$color19;
+            }
         }
     }
 
@@ -124,7 +160,7 @@ $color19:#5B568E;
         p{
             font-family: 'Lato', sans-serif;
             font-size:14px;
-            color:$color5;
+            color:$color4;
             line-height: 24px;
         }
     }
@@ -133,7 +169,7 @@ $color19:#5B568E;
             content:'\f00d';
             display: inline-block;
             font-family: 'FontAwesome';
-            color:$color6;
+            color:$color5;
             font-size:14px;
             line-height: 24px;
             position: absolute;
