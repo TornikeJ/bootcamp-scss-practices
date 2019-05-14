@@ -1,0 +1,170 @@
+@import 'box-style';
+
+$font1:'FontAwesome';
+$font2: 'Lato', sans-serif;
+
+.notification {
+    display: flex;
+    position: relative;
+    padding-right: 70px;
+    padding-bottom: 34px;
+    padding-left: 49px;
+    border: 1px solid #E2E6E7;
+    border-radius: 10px;
+
+    &.solid {
+        border-color: transparent;
+        background-color: $color2;
+    }
+
+    &::before {
+        content: '\f12a';
+        display: flex;
+        flex-shrink: 0;
+        align-content: center;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        margin-top: 42px;
+        margin-right: 29px;
+        border: 7px solid $color3;
+        border-radius: 50%;
+        background-color: $color2;
+        color: $color15;
+        font-family: $font1;
+        font-size: 24px;
+        line-height: 26px;
+    }
+
+    a {
+
+        &::before {
+            content: '\f00d';
+            display: inline-block;
+            position: absolute;
+            top: 12px;
+            right: 18px;
+            color: $color5;
+            font-family: $font1;
+            font-size: 14px;
+            line-height: 24px;
+        }
+    }
+
+    &.positive {
+
+        &.solid {
+            border-color: transparent;
+            background-color: $color7;
+        }
+
+        &::before {
+            content: '\f00c';
+
+            @include box-style(7px,solid,$color8,$color7,$color16);
+        }
+
+        a {
+
+            &::before {
+                color: $color16;
+            }
+        }
+    }
+
+    &.negative {
+
+        &.solid {
+            border-color: transparent;
+            background-color: $color9;
+        }
+
+        &::before {
+            content: '\f00d';
+
+            @include box-style(7px,solid,$color10,$color9,$color17);
+        }
+
+        a {
+
+            &::before {
+                color: $color17;
+            }
+        }
+    }
+
+    &.flash {
+
+        &.solid {
+            border-color: transparent;
+            background-color: $color11;
+        }
+
+        &::before {
+            content: '\f0e7';
+
+            @include box-style(7px,solid,$color12,$color11,$color18);
+        }
+
+        a {
+
+            &::before {
+                color: $color18;
+            }
+        }
+    }
+
+    &.info {
+        grid-column: span 2;
+        padding-right: 55px;
+
+        &.solid {
+            border-color: transparent;
+            background-color: $color13;
+        }
+
+        &::before {
+            content: '\f129';
+
+            @include box-style(7px,solid,$color14,$color13,$color19);
+        }
+
+        a {
+
+            &::before {
+                color: $color19;
+            }
+        }
+    }
+
+    div {
+        margin-top: 34px;
+
+        h1 {
+            margin-bottom: 6px;
+            color: $color4;
+            font-family: $font2;
+            font-size: 14px;
+            font-weight: 900;
+            letter-spacing: 1.4px;
+            line-height: 26px;
+            text-transform: uppercase;
+        }
+
+        p {
+            color: $color4;
+            font-family: $font2;
+            font-size: 14px;
+            line-height: 24px;
+        }
+    }
+}
+
+.wrap {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    width: 1170px;
+}

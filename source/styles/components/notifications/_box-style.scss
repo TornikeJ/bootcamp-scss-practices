@@ -1,0 +1,7 @@
+@mixin box-style($border-width,$border-style,$border-color,$background-color,$color) {
+    border-width: $border-width;
+    border-style: $border-style;
+    border-color: $border-color;
+    background-color: $background-color;
+    color: $color;
+}
